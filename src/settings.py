@@ -10,3 +10,7 @@ SIZE = (800, 600)
 
 # colors
 WHITE = (255,255,255)
+
+
+# SPRITES
+SPRITESHEET_PATH = "resources/spritesheet.png"
