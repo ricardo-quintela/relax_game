@@ -13,4 +13,4 @@ WHITE = (255,255,255)
 
 
 # SPRITES
-SPRITESHEET_PATH = "resources/spritesheet.png"
+SPRITESHEET_PATH = "assets/spritesheet.png"

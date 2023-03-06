@@ -26,12 +26,15 @@ class Game:
         self.floor_grid = Group()
 
     
-    def load_resources(self):
-        """Loads the game resources before the mainloop
+    def load_assets(self):
+        """Loads the game assets before the mainloop
         """
 
         Spritesheet.load_spritesheet(SPRITESHEET_PATH)
-        Spritesheet.set_color_key((255,0,255))
+        Spritesheet.set_color_key((0,0,0))
+        
+        Tile.set_screen_offset((self.win.size[0] // 2, self.win.size[1] // 2))
+        print(Tile.screen_offset)
 
 
     def update(self):
@@ -50,9 +53,13 @@ class Game:
         """Game mainloop
         """
 
-        self.load_resources()
+        self.load_assets()
 
-        Tile((100,100), (128,128), self.floor_grid, sprite_coords=(0,0,32,32))
+        # quick map
+        for i in range(-4, 4):
+            for j in range(-4, 4):
+                Tile((i,j), (96,96), self.floor_grid, sprite_coords=(0,0,32,32))
+
 
         # mainloop
         while self.event_handeler.getEvent("windowState"):
